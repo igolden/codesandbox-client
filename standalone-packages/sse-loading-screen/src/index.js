@@ -36,7 +36,7 @@ if (process.env.NODE_ENV === 'development') {
 } else {
   hostParts = window.location.hostname.split('.');
 }
-const rootDomain = `codesandbox.${hostParts[hostParts.length - 1]}`;
+const rootDomain = `csb-bogdan.${hostParts[hostParts.length - 1]}`;
 const sseLbHost = `sse-lb.${rootDomain}`;
 // parses sandboxId[-port]
 const sandboxId = hostParts[0].replace(/-\d+/, '');
