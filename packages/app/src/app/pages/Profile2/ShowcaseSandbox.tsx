@@ -29,7 +29,7 @@ export const ShowcaseSandbox = () => {
         <>
           <Element
             as="iframe"
-            src={`https://${showcasedSandbox.id}.csb.app?standalone=1`}
+            src={`https://${showcasedSandbox.id}.csb-bogdan.dev?standalone=1`}
             css={css({
               backgroundColor: 'white',
               width: '100%',
