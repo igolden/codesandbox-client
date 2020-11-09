@@ -8,14 +8,14 @@ export default ({
 }: {
   [key: string]: string;
 }) =>
-  fetch('https://s2973.sse.csb-bogdan.dev/inbound-message', {
+  fetch('https://s2973.sse.codesandbox.io/inbound-message', {
     method: 'POST',
     body: JSON.stringify({
       name: username,
       email,
       body:
         feedback +
-        '\n\nSandbox: https://csb-bogdan.dev/s/' +
+        '\n\nSandbox: https://codesandbox.io/s/' +
         sandboxId +
         '\nVersion: ' +
         version +

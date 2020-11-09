@@ -3,7 +3,7 @@ require('dotenv').config();
 module.exports = {
   siteMetadata: {
     title: `CodeSandbox`,
-    siteUrl: 'https://csb-bogdan.dev',
+    siteUrl: 'https://codesandbox.io',
   },
   plugins: [
     'gatsby-transformer-sharp',

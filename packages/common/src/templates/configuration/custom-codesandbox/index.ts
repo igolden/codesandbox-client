@@ -4,7 +4,7 @@ const config: ConfigurationFile = {
   title: 'template.json',
   type: 'customTemplate',
   description: 'Configuration for the custom template',
-  moreInfoUrl: 'https://csb-bogdan.dev',
+  moreInfoUrl: 'https://codesandbox.io',
 
   getDefaultCode: () =>
     JSON.stringify(
