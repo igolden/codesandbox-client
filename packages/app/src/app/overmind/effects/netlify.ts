@@ -3,7 +3,7 @@ import { NetlifySite, Sandbox } from '@codesandbox/common/lib/types';
 import getNetlifyConfig from 'app/utils/getNetlifyConfig';
 import axios from 'axios';
 
-const NetlifyBaseURL = 'https://netlify.deploy.csb-bogdan.dev/site';
+const NetlifyBaseURL = 'https://netlify.deploy.codesandbox.io/site';
 
 type Options = {
   getUserId(): string | null;
@@ -76,11 +76,11 @@ export default (() => {
       }
 
       await axios.post(
-        `${NetlifyBaseURL}/${
-          sandbox.id
-        }/deploys?siteId=${id}&dist=${buildConfig.publish ||
-          template.distDir}&buildCommand=${buildCommandFromConfig ||
-          buildCommand(template.name)}`,
+        `${NetlifyBaseURL}/${sandbox.id}/deploys?siteId=${id}&dist=${
+          buildConfig.publish || template.distDir
+        }&buildCommand=${
+          buildCommandFromConfig || buildCommand(template.name)
+        }`,
         file,
         {
           headers: {

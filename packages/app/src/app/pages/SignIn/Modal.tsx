@@ -118,8 +118,8 @@ export const SignInModalElement = ({
           })}
         >
           By continuing, you agree to CodeSandbox{' '}
-          <a href="https://csb-bogdan.dev/legal/terms">Terms of Service</a>,{' '}
-          <a href="https://csb-bogdan.dev/legal/privacy">Privacy Policy</a>
+          <a href="https://codesandbox.io/legal/terms">Terms of Service</a>,{' '}
+          <a href="https://codesandbox.io/legal/privacy">Privacy Policy</a>
         </Text>
       </Element>
     </Wrapper>

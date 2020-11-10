@@ -201,7 +201,7 @@ export const UserSettings = () => {
                   </Stack>
                   <Button
                     as="a"
-                    href="https://csb-bogdan.dev/pro"
+                    href="https://codesandbox.io/pro"
                     target="_blank"
                     marginTop={2}
                   >
