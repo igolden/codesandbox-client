@@ -11,7 +11,7 @@ import AttrPlugin from 'gsap/AttrPlugin';
 import { Power3 } from 'gsap/EasePack';
 import TweenLite from 'gsap/TweenLite';
 import TimelineLite from 'gsap/TimelineLite';
-import axios from 'axios';
+/* import axios from 'axios'; */
 
 import { isStandalone } from 'codesandbox-api'
 import getTemplate from '@codesandbox/common/lib/templates';
@@ -37,7 +37,7 @@ if (process.env.NODE_ENV === 'development') {
   hostParts = window.location.hostname.split('.');
 }
 const rootDomain = `csb-bogdan.${hostParts[hostParts.length - 1]}`;
-const sseLbHost = `sse-lb.${rootDomain}`;
+/* const sseLbHost = `sse-lb.${rootDomain}`; */
 // parses sandboxId[-port]
 const sandboxId = hostParts[0].replace(/-\d+/, '');
 const port = hostParts[0].replace(/^\w+-?/, '');
@@ -238,9 +238,9 @@ async function start() {
 
   term.fit();
 
-  const res = await axios.get(`https://${sseLbHost}/api/cluster/${sandboxId}`);
-  const sseHost = res.data.hostname;
-
+/*   const res = await axios.get(`https://${sseLbHost}/api/cluster/${sandboxId}`);
+  const sseHost = res.data.hostname; */
+  const sseHost = `sse.${rootDomain}`;
   const socket = io(`https://${sseHost}`, {
     autoConnect: false,
     transports: ['websocket'],

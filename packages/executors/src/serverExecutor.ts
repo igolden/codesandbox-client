@@ -1,7 +1,7 @@
 import io from 'socket.io-client';
 import { dispatch } from 'codesandbox-api';
 import _debug from 'debug';
-import axios from 'axios';
+/* import axios from 'axios'; */
 
 import { IExecutor, IFiles, ISetupParams } from './executor';
 
@@ -77,10 +77,10 @@ export class ServerExecutor implements IExecutor {
       throw new Error('initializeSocket: sandboxId is not defined');
     }
     const usedHost = this.host || 'https://csb-bogdan.dev';
-    const sseLbHost = usedHost.replace('https://', 'https://sse-lb.');
+    /*     const sseLbHost = usedHost.replace('https://', 'https://sse-lb.');
     const res = await axios.get(`${sseLbHost}/api/cluster/${this.sandboxId}`);
-    const sseHost = res.data.hostname;
-
+    const sseHost = res.data.hostname; */
+    const sseHost = `sse.${usedHost.replace('https://', '')}`;
     this.socket = io(sseHost, {
       autoConnect: false,
       transports: ['websocket', 'polling'],
@@ -169,16 +169,19 @@ export class ServerExecutor implements IExecutor {
         sseTerminalMessage(`Sandbox ${this.sandboxId} started`);
       });
 
+      // eslint-disable-next-line no-unused-expressions
       this.socket?.open();
     });
   }
 
   private async startSandbox() {
     const token = await this.token;
+    // eslint-disable-next-line no-unused-expressions
     this.socket?.emit('sandbox', { id: this.sandboxId, token });
 
     debug('Connected to sse manager, sending start signal...');
     sseTerminalMessage(`Starting sandbox ${this.sandboxId}...`);
+    // eslint-disable-next-line no-unused-expressions
     this.socket?.emit('sandbox:start');
   }
 
