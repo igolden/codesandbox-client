@@ -45,7 +45,6 @@ export const WorkspaceComponent = ({ theme }) => {
   return (
     <Container>
       <ThemeProvider theme={theme.vscodeTheme}>
-        <>
           <div
             style={{
               flex: 1,
@@ -55,9 +54,6 @@ export const WorkspaceComponent = ({ theme }) => {
           >
             {state.editor.currentSandbox && <Component />}
           </div>
-
-          {isLive && roomInfo.chatEnabled && <Chat />}
-        </>
       </ThemeProvider>
     </Container>
   );

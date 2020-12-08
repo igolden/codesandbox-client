@@ -146,41 +146,7 @@ const RoutesComponent: React.FC = () => {
       <Boundary>
         <Content>
           <Switch>
-            <Route exact path="/" render={() => <Redirect to="/s" />} />
-            <Route exact path="/s/github" component={GitHub} />
-            <Route exact path="/s/cli" component={CliInstructions} />
-            <Route
-              exact
-              path="/s"
-              component={() => <Sandbox showNewSandboxModal />}
-            />
-            <Route
-              exact
-              path="/s2"
-              component={() => <Sandbox showNewSandboxModal />}
-            />
-            <Route path="/invite/:token" component={TeamInvitation} />
-
-            <Route path="/dashboard" component={Dashboard} />
-            <Route path="/new-dashboard" component={Dashboard} />
-            <Route path="/curator" component={Curator} />
             <Route path="/s/:id*" component={Sandbox} />
-            <Route path="/live/:roomId" component={Live} />
-            <Route path="/signin" exact component={SignIn} />
-            <Route path="/signin/duplicate" component={DuplicateAccount} />
-            <Route path="/signup/:userId" exact component={SignUp} />
-            <Route path="/signin/:jwt?" component={SignInAuth} />
-            <Route path="/u/:username" component={Profile} />
-            <Route path="/u2/:username" component={Profile2} />
-            <Route path="/search" component={Search} />
-            <Route path="/patron" component={Patron} />
-            <Route path="/pro" component={Pro} />
-            <Route path="/cli/login" component={CLI} />
-            <Route path="/auth/zeit" component={VercelSignIn} />
-            <Route path="/auth/sandbox/:id" component={PreviewAuth} />
-            {(process.env.LOCAL_SERVER || process.env.STAGING) && (
-              <Route path="/auth/dev" component={DevAuthPage} />
-            )}
             <Route path="/codesadbox" component={CodeSadbox} />
             <Route component={NotFound} />
           </Switch>
